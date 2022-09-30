@@ -1,3 +1,5 @@
+#include <iostream>
+
 int linear_search(const int sequence[], const int len, const int num) {
   for (int i = 0; i < len; ++i) {
     if (sequence[i] == num) {
@@ -21,6 +23,8 @@ int main() {
 
   const int len = sizeof(sequence) / sizeof(sequence[0]);
 
-  // 57 это индекс искомого элемента
-  return linear_search(sequence, len, 120) - 57;
+
+  std::cout<< linear_search(sequence, len, 120)<< std::endl;
+  return 0;
+
 }
