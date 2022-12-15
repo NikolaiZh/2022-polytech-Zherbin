@@ -1,9 +1,13 @@
+#ifndef LINKED_LIST_HPP
+#define LINKED_LIST_HPP
 
 #include <initializer_list>
 #include <iostream>
+
 template <typename T> struct Node {
   T data;
   Node *next;
+
   Node(T d, Node *n) : data{d}, next{n} {}
   Node(T d) : Node(d, nullptr) {}
 
@@ -127,6 +131,7 @@ public:
     }
     return out;
   }
+
   bool operator==(LinkedList<T> &ll) {
     if (m_size != ll.m_size)
       return false;
@@ -138,7 +143,10 @@ public:
     }
     return true;
   }
+
 private:
   LinkedList(const LinkedList &) = delete;
   void operator=(const LinkedList &) = delete;
 };
+
+#endif
