@@ -1,4 +1,5 @@
 
+
 #include "String.h"
 #include <cstring>
 #include <iostream>
@@ -14,9 +15,9 @@ unsigned int String::get_length() { return length; }
 const char *String::c_str() { return data; }
 
 String String::operator+(String rv) {
-  auto dest = (char *)malloc(length);
+  auto dest = (char *)malloc(length + rv.get_length());
   strcpy(dest, data);
-  strcpy(dest + rv.get_length(), rv.c_str());
+  strcpy(dest + length - 1, rv.c_str());
   return String(dest);
 }
 
