@@ -1,8 +1,13 @@
 #include <iostream>
 #include <cassert>
+
 int gcd(int a, int b) {
-  if (a < 0)   a *= -1;
-  if (b < 0)   b *= -1;
+
+  if (a < 0) a *= -1;
+  if (b < 0) b *= -1;
+
+ //Решение
+ 
   {
   int max, min;
   if (a < b) {
@@ -20,7 +25,8 @@ int gcd(int a, int b) {
   }
   return gcd(min, max - min);
 }
- return 0;
+
+   return 0;
  }
 
 int main() {
