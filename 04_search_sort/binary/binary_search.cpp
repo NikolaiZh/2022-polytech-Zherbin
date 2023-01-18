@@ -1,26 +1,39 @@
+#include <iostream>
 
-#include <cassert>
-
-int binary_search(const int seq[], const int num, int high, int low){
-  while (high - low > 1) {
-    const int mid = (high + low) / 2;
-    if (seq[mid] < num)
-      low = mid + 1;
-    else
-      high = mid;
+int binary_search(int arr[], int l, int r, int x)
+{
+  while (r >= l)
+   {
+  int mid = l + (r-l) / 2;
+ 
+  if (arr[mid] == x)
+  {
+  	return mid;
   }
-  if (high == num)
-    return high;
-  return low;
+  if (arr[mid] < x)
+  {
+        l = mid+1;
+  } 
+  else
+  	{
+  	r = mid-1;
+ 	 }
+    }
+    return -1;
+  }
+int main()
+{
+int arr[] = {2, 5, 6, 12, 17, 19, 25, 34, 37, 40};
+int x = 34;
+int n = sizeof(arr) / sizeof(arr[0]);
+int result = binary_search(arr, 0, n-1, x);
+if (result == -1)
+{
+std::cout << "Element is not present in array" << std::endl;
 }
-
-int main(){
-  int seq[10];
-  for(auto i = 0; i < 10; ++i)
-    seq[i] = i;
-
-  assert(binary_search(seq, 2, 9, 0) == 2);
-  assert(binary_search(seq, 1, 9, 0) == 1);
-
+else
+{
+std::cout << "Id  " << result << std::endl;
+} 
   return 0;
 }
