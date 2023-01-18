@@ -1,14 +1,9 @@
-#include <cassert>
 #include <iostream>
-
+#include <cassert>
 int gcd(int a, int b) {
-
-  if (a < 0)
-    a *= -1;
-  if (b < 0)
-    b *= -1;
-
-  // Решение тут
+  if (a < 0)   a *= -1;
+  if (b < 0)   b *= -1;
+  {
   int max, min;
   if (a < b) {
     max = b;
@@ -25,6 +20,8 @@ int gcd(int a, int b) {
   }
   return gcd(min, max - min);
 }
+ return 0;
+ }
 
 int main() {
   assert(gcd(0, 5) == 5);
@@ -34,5 +31,7 @@ int main() {
   assert(gcd(30, 18) == 6);
   assert(gcd(-30, -18) == 6);
   assert(gcd(270, 192) == 6);
+  
+  
   return 0;
 }
