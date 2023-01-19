@@ -1,3 +1,5 @@
+
+
 #include <cassert>
 
 int *insert(int arr[], int n, int x, int p);
@@ -5,9 +7,6 @@ int search_position(int arr[], int n, int x);
 int *insert_sorted(int arr[], int n, int x);
 
 int main() {
-  // NOTE: aN - array
-  //       rN - result
-
 
   int a0[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
   int expected_r0[11] = {0, 1, 2, 3, 100, 4, 5, 6, 7, 8, 9};
@@ -16,14 +15,13 @@ int main() {
   for (auto i = 0; i < 11; ++i)
     assert(r0[i] == expected_r0[i]);
 
-  // `search_position` example
   int a1[4] = {1, 3, 5, 6};
   assert(search_position(a1, 4, 5) == 2);
 
   int a2[4] = {1, 3, 5, 6};
   assert(search_position(a2, 4, 7) == 4);
 
-  // `insert_sorted` example
+ 
   int a4[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
   int expected_r4[11] = {0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9};
 
